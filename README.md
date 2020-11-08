@@ -21,7 +21,7 @@ The results for T-Test for the suspenion coil across all manufacturing lots, one
 
 When comparing lot 1 to lot 2 suspension coils the p-value is .6052. This means that we would fail to reject the null and this indicates that there is no statistcal difference between lot 1 and lot 2.
 
-![image}(https://github.com/ducluu27/MechaCar_Statistical_Analysis-/blob/main/Resources/Lot%201%20Lot%202.png)
+![image](https://github.com/ducluu27/MechaCar_Statistical_Analysis-/blob/main/Resources/Lot%201%20Lot%202.png)
 
 When comparing lot 2 to 3 , the p-value is .04199. This means that we would reject the null and that there are differences between the two lots.
 
