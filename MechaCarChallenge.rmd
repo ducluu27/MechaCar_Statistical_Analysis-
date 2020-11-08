@@ -1,0 +1,52 @@
+```{r}
+library(dplyr)
+```
+```{r}
+library(tidyverse)
+```
+
+```{r}
+mecha_car <- read.csv(file = 'MechaCar_mpg.csv',check.names=F)
+```
+
+```{r}
+lm(mpg~vehicle_length + vehicle_weight + spoiler_angle + ground_clearance + AWD,data=mecha_car)
+```
+
+```{r}
+summary(lm(mpg~vehicle_length + vehicle_weight + spoiler_angle + ground_clearance + AWD,data=mecha_car))
+```
+
+```{r}
+suspension_coil <- read.csv(file = 'Suspension_Coil.csv',check.names=F)
+```
+
+```{r}
+total_summary <- suspension_coil %>% summarize(Mean=mean(PSI),Median=median(PSI),Varience=var(PSI),SD=sd(PSI))
+```
+
+```{r}
+lot_summary <- suspension_coil %>% group_by(Manufacturing_Lot) %>% summarize(Mean=mean(PSI),Median=median(PSI),Varience=var(PSI),SD=sd(PSI), .groups ='keep')
+```
+
+```{r}
+t.test(suspension_coil$PSI, mu=1500)
+```
+
+```{r}
+lot1 <-suspension_coil%>% filter(Manufacturing_Lot=='Lot1')
+lot2 <-suspension_coil%>% filter(Manufacturing_Lot=='Lot2')
+lot3 <-suspension_coil%>% filter(Manufacturing_Lot=='Lot3')
+```
+```{r}
+t.test(lot1$PSI, lot2$PSI, paired = T)
+```
+
+```{r}
+t.test(lot2$PSI, lot3$PSI, paired = T)
+```
+
+```{r}
+t.test(lot1$PSI, lot3$PSI, paired = T)
+```
+
